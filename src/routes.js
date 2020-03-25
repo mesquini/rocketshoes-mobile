@@ -1,23 +1,29 @@
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import React from 'react';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-import Cart from './pages/cart';
 import Home from './pages/home/';
+import Cart from './pages/cart';
+import Header from './components/Header';
 
-export default createAppContainer(
-  createSwitchNavigator(
+import colors from './styles/colors';
+
+const Routes = createAppContainer(
+  createStackNavigator(
     {
       Home,
       Cart,
     },
     {
-      headerLayoutPresent: 'center',
-      headerBackTitleVisible: false,
-      defaultNavigationOptions: {
-        headerStyle: {
-          backgroundColor: '#7159c1',
+      // initialRouteName: 'Cart',
+      defaultNavigationOptions: navigation => ({
+        header: () => <Header {...navigation} />,
+        cardStyle: {
+          backgroundColor: colors.dark,
         },
-        headerTintColor: '#fff',
-      },
+      }),
     }
   )
 );
+
+export default Routes;

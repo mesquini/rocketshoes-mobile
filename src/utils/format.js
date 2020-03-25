@@ -1,4 +1,3 @@
-export const { format: formatPrice } = new Intl.NumberFormat('pt-br', {
-  style: 'currency',
-  currency: 'BRL',
-});
+export const currencyFormat = num => {
+  return 'R$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, 'R$1,');
+};
