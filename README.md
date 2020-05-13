@@ -25,7 +25,10 @@ This project is based in the e-commerce created at the web
   <a href="#memo-license">License</a>
 </p>
 
-<img align="center" src=".github/rocketshoes-mobile.gif" height="400">
+<p  align="center">
+  <img src=".github/rocketshoes-mobile.gif" height="400">
+</p>
+
 
 ## :rocket: Technologies
 
